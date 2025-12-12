@@ -83,8 +83,8 @@
             /* ============ PORTRAIT PROFILE PIC STYLES ============ */
             .profile-pic {
                 width: 100%;
-                /* 竖屏：原始尺寸的1.4倍 */
-                max-width: calc(120px * 1.4); /* 168px */
+                /* 竖屏：原始尺寸的1.5倍 */
+                max-width: calc(120px * 1.5); /* 180px */
                 height: auto;
                 aspect-ratio: 1 / 1; /* 保持正方形比例 */
                 border: 4px solid #fff;
@@ -99,7 +99,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                min-height: 168px; /* 匹配图片高度 */
+                min-height: 180px; /* 匹配图片高度 */
             }
         }
 
@@ -324,10 +324,10 @@
             /* 竖屏下的小屏幕调整 */
             @media (orientation: portrait) {
                 .profile-pic {
-                    max-width: calc(100px * 1.4); /* 140px */
+                    max-width: calc(100px * 1.5); /* 150px */
                 }
                 .profile-container {
-                    min-height: 140px;
+                    min-height: 150px;
                 }
             }
         }
@@ -339,10 +339,10 @@
             /* 竖屏下的小屏幕调整 */
             @media (orientation: portrait) {
                 .profile-pic {
-                    max-width: calc(80px * 1.4); /* 112px */
+                    max-width: calc(80px * 1.5); /* 120px */
                 }
                 .profile-container {
-                    min-height: 112px;
+                    min-height: 120px;
                 }
             }
         }
@@ -352,10 +352,10 @@
             /* 竖屏下的小屏幕调整 */
             @media (orientation: portrait) {
                 .profile-pic {
-                    max-width: calc(70px * 1.4); /* 98px */
+                    max-width: calc(70px * 1.5); /* 105px */
                 }
                 .profile-container {
-                    min-height: 98px;
+                    min-height: 105px;
                 }
             }
         }
