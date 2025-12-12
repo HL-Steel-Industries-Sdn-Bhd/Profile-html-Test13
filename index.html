@@ -79,6 +79,28 @@
                 grid-template-columns: 1fr 1fr;
                 grid-gap: 15px;
             }
+
+            /* ============ PORTRAIT PROFILE PIC STYLES ============ */
+            .profile-pic {
+                width: 100%;
+                /* 竖屏：原始尺寸的1.4倍 */
+                max-width: calc(120px * 1.4); /* 168px */
+                height: auto;
+                aspect-ratio: 1 / 1; /* 保持正方形比例 */
+                border: 4px solid #fff;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                object-fit: cover; /* 确保图片填充而不变形 */
+                margin: 0 auto;
+                display: block;
+                border-radius: 8px; /* 可选：轻微的圆角，如需要纯直角可改为 0 */
+            }
+
+            .profile-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 168px; /* 匹配图片高度 */
+            }
         }
 
         /* ----------------------------- */
@@ -154,6 +176,27 @@
                 grid-template-rows: repeat(4, 1fr);
                 grid-gap: 15px;
             }
+
+            /* ============ LANDSCAPE PROFILE PIC STYLES ============ */
+            .profile-pic {
+                width: 100%;
+                max-width: 180px; /* 横屏：改为180px */
+                height: auto;
+                aspect-ratio: 1 / 1; /* 保持正方形比例 */
+                border: 4px solid #fff;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                object-fit: cover; /* 确保图片填充而不变形 */
+                margin: 0 auto;
+                display: block;
+                border-radius: 8px; /* 可选：轻微的圆角，如需要纯直角可改为 0 */
+            }
+
+            .profile-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+            }
         }
 
         /* Common Styles */
@@ -170,41 +213,6 @@
             max-width: 120px;
             height: auto;
             border-radius: 10px;
-        }
-
-        /* 修改点1: 将圆形头像改为正方形自适应 */
-        .profile-pic {
-            width: 100%;
-            max-width: 120px; /* 限制最大尺寸 */
-            height: auto;
-            aspect-ratio: 1 / 1; /* 保持正方形比例 */
-            border: 4px solid #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            object-fit: cover; /* 确保图片填充而不变形 */
-            margin: 0 auto;
-            display: block;
-            border-radius: 8px; /* 可选：轻微的圆角，如需要纯直角可改为 0 */
-        }
-
-        /* 修改点2: 确保profile容器也是正方形 */
-        .profile-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* 修改点3: 竖屏下的profile容器尺寸 */
-        @media (orientation: portrait) {
-            .profile-container {
-                min-height: 120px;
-            }
-        }
-
-        /* 修改点4: 横屏下的profile容器尺寸 */
-        @media (orientation: landscape) {
-            .profile-container {
-                height: 100%;
-            }
         }
 
         .name {
@@ -307,27 +315,48 @@
             color: #333;
         }
 
+        /* 响应式调整 */
         @media (max-width: 768px) {
             .name { font-size: 2em; }
             .point-value { font-size: 2em; }
             .button { padding: 15px; font-size: 1em; }
-            .profile-pic {
-                max-width: 100px;
+            
+            /* 竖屏下的小屏幕调整 */
+            @media (orientation: portrait) {
+                .profile-pic {
+                    max-width: calc(100px * 1.4); /* 140px */
+                }
+                .profile-container {
+                    min-height: 140px;
+                }
             }
         }
 
         @media (max-width: 480px) {
             .name { font-size: 1.8em; }
-            .profile-pic { 
-                max-width: 80px;
-            }
             .button { padding: 12px; font-size: 0.9em; }
+            
+            /* 竖屏下的小屏幕调整 */
+            @media (orientation: portrait) {
+                .profile-pic {
+                    max-width: calc(80px * 1.4); /* 112px */
+                }
+                .profile-container {
+                    min-height: 112px;
+                }
+            }
         }
 
-        /* 修改点5: 小屏幕下的正方形适配 */
+        /* 小屏幕下的正方形适配 */
         @media (max-width: 360px) {
-            .profile-pic {
-                max-width: 70px;
+            /* 竖屏下的小屏幕调整 */
+            @media (orientation: portrait) {
+                .profile-pic {
+                    max-width: calc(70px * 1.4); /* 98px */
+                }
+                .profile-container {
+                    min-height: 98px;
+                }
             }
         }
     </style>
